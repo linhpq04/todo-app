@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: TodoApp
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/todo_app}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:600000}
